@@ -9,9 +9,11 @@ RSpec.describe InvoiceItem, type: :model do
     it { should validate_presence_of :status }
     it { should validate_presence_of :discount}
   end
+
   describe "relationships" do
     it { should belong_to :invoice }
     it { should belong_to :item }
+    it { should have_many(:bulk_discounts).through(:item)}
   end
 
   describe "class methods" do
