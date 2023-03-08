@@ -39,7 +39,7 @@
             <td style="text-align:center"><%= i.quantity %></td>
             <td style="text-align:center">$<%= i.unit_price %></td>
             <td style="text-align:center">
-              <% if i.discount != 0 %>
+              <% if i.total_discount != nil %>
                 <%= link_to "#{i.total_discount}%", "/merchant/#{@merchant.id}/bulk_discounts/#{i.discount}" %>
               <% else %>
                 <%= "No Discount" %>
