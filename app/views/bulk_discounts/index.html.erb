@@ -1,6 +1,16 @@
 <%= render partial: "shared/merchant_navbar", locals: { merchant: @merchant } %>
 
 <body>
+
+  <div id="holidays">
+    <h4 style="background-color:#EBEFF3;">Upcoming Holidays</h4>
+    <ul>
+    <% @holidays.each do |holiday| %>
+      <li><%= holiday.name %> on <%= holiday.date %></li>
+    <% end %>
+    </ul>
+  </div>
+
   <div class="row">
     <p class='col-12'>My Bulk Discounts</p>
   </div>
