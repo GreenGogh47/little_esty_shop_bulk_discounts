@@ -82,7 +82,6 @@ RSpec.describe 'BulkDiscount#Index' do
 
     describe "User Story 3" do
       it "has a link to delete a bulk discount" do
-        save_and_open_page
         within("#bulk_discount_#{@bulk_discount2.id}") do
           expect(page).to have_button("Delete")
           click_button "Delete"
@@ -94,7 +93,6 @@ RSpec.describe 'BulkDiscount#Index' do
           expect(page).to_not have_content(@bulk_discount2.discount_percent)
           expect(page).to_not have_content(@bulk_discount2.quantity_threshold)
         end
-        save_and_open_page
       end
     end
 
